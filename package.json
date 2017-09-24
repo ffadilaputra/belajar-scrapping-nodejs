@@ -1,0 +1,30 @@
+{
+  "name": "belajar-scrapping-nodejs",
+  "version": "1.0.0",
+  "description": "Belajar scrapping pakai nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffadilaputra/belajar-scrapping-nodejs.git"
+  },
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "extend": "^3.0.0",
+    "request": "^2.69.0"
+  },
+  "keywords": [
+    "nodejs",
+    "scrapping",
+    "javascript"
+  ],
+  "author": "Ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ffadilaputra/belajar-scrapping-nodejs/issues"
+  },
+
+  "homepage": "https://github.com/ffadilaputra/belajar-scrapping-nodejs#readme"
+}
