@@ -1,8 +1,8 @@
-var cheerio = require('cheerio');
-var extend = require('extend');
-var request = require('request');
+const cheerio = require('cheerio')
+const extend = require('extend')
+const request = require('request')
 
-module.exports = function(userOptions) {
+module.exports = function(userOptions){
   var options = extend({
     method: 'GET',
     baseUrl: '',
@@ -12,31 +12,31 @@ module.exports = function(userOptions) {
       'Cache-Control': 'max-age=0',
       'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36',
     },
-  }, userOptions);
+  }, userOptions)
 
-  function scrape(url, callback) {
-    var req = getRequestInstance();
+  const scrape = (url, callback) => {
+    var req = getRequestInstance()
 
-    req(url, function(error, response, body) {
+    req(url, (error, response, body) => {
       if (error) {
-        return callback(error);
+        return callback(error)
       }
 
       if (response.statusCode !== 200) {
-        return callback(new Error('Failed to scrape the page.'));
+        return callback(new Error('Failed to scrape the page.'))
       }
 
-      var $ = cheerio.load(body);
+      const $ = cheerio.load(body)
 
-      return callback(null, $);
-    });
+      return callback(null, $)
+    })
   }
 
-  function getRequestInstance() {
-    return request.defaults(options);
+  const getRequestInstance = () => {
+    return request.defaults(options)
   }
 
   return {
     scrape: scrape,
-  };
-};
+  }
+}
